@@ -1,0 +1,96 @@
+﻿<Window x:Class="SimpleCurrecyApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SimpleCurrecyApp"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Background="{DynamicResource MaterialDesign.Brush.Background}"
+        
+        TextElement.FontWeight="Medium"
+        TextElement.FontSize="25"
+        FontFamily="{StaticResource Jersey-Font}"
+        TextElement.Foreground="{DynamicResource MaterialDesign.Brush.Foreground}"
+
+        mc:Ignorable="d"
+        
+        Title="Currecy Converter" Height="800" Width="1200">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="10"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="10"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="10"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="16*"/>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="10"/>
+        </Grid.ColumnDefinitions>
+
+
+        <StackPanel Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock HorizontalAlignment="Center" FontSize="60" FontFamily="{StaticResource Jersey-Font}">Currecy Converter</TextBlock>
+            <TextBlock HorizontalAlignment="Center" FontSize="20">Converted Currency</TextBlock>
+        </StackPanel>
+
+        <Border Grid.Row="2" Grid.Column="2">
+            <Rectangle  RadiusX="10" RadiusY="10" StrokeThickness="5">
+                <Rectangle.Fill>
+                    <LinearGradientBrush  StartPoint="1,1" EndPoint="0.2,0.2">
+                        <GradientStop Color="{StaticResource Primary300}"/>
+                        <GradientStop Color="{StaticResource Primary500}" Offset="0.5"/>
+                    </LinearGradientBrush>
+                </Rectangle.Fill>
+            </Rectangle>
+        </Border>
+
+        <Grid Grid.Row="2" Grid.Column="2">
+            
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition  Width="5*"/>
+                <ColumnDefinition  Width="*"/>
+                <ColumnDefinition  Width="5*"/>
+            </Grid.ColumnDefinitions>
+
+
+            <StackPanel Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Label Foreground="{DynamicResource  MaterialDesign.Brush.Background}" FontSize="30">Enter Amount:</Label>
+
+                <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+                    <TextBox x:Name="txtUserInput" Width="300" Margin="0 0 10 0" Background="{DynamicResource MaterialDesign.Brush.Background}"/>
+                    <ComboBox Width="100" Background="{DynamicResource MaterialDesign.Brush.Background}"></ComboBox>
+                </StackPanel>
+            </StackPanel>
+
+            <materialDesign:PackIcon  Grid.Column="1" Foreground="{DynamicResource MaterialDesign.Brush.Background}"  VerticalAlignment="Center" HorizontalAlignment="Center" Kind="ArrowRightBold" Height="75" Width="75"/>
+
+
+            <StackPanel Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center">
+                <Label Foreground="{DynamicResource  MaterialDesign.Brush.Background}" FontSize="30">Result Currency:</Label>
+
+                <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
+                    <TextBlock x:Name="txtResult" Width="300" Margin="0 0 10 0" Padding="5"  Background="{DynamicResource MaterialDesign.Brush.Background}"/>
+                    <ComboBox Width="100" Background="{DynamicResource MaterialDesign.Brush.Background}"></ComboBox>
+                </StackPanel>
+            </StackPanel>
+        </Grid>
+
+        <Grid Grid.Row="3" Grid.Column="2">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+
+            <Button Grid.Column="1"  Click="Convert_Click" Height="50" FontSize="25">Convert</Button>
+            <Button Grid.Column="3" Click="Clear_Click" Height="50" FontSize="25">Clear</Button>
+        </Grid>
+    </Grid>
+</Window>

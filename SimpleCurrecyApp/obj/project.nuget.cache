@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "dgSpecHash": "nbBLE9PE2/k=",
+  "success": true,
+  "projectFilePath": "D:\\SimpleProject\\SimpleCurrecyApp\\SimpleCurrecyApp\\SimpleCurrecyApp.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\lmh21\\.nuget\\packages\\materialdesigncolors\\3.1.0\\materialdesigncolors.3.1.0.nupkg.sha512",
+    "C:\\Users\\lmh21\\.nuget\\packages\\materialdesignthemes\\5.1.0\\materialdesignthemes.5.1.0.nupkg.sha512",
+    "C:\\Users\\lmh21\\.nuget\\packages\\microsoft.xaml.behaviors.wpf\\1.1.39\\microsoft.xaml.behaviors.wpf.1.1.39.nupkg.sha512",
+    "C:\\Users\\lmh21\\.nuget\\packages\\sixlabors.fonts\\2.0.4\\sixlabors.fonts.2.0.4.nupkg.sha512"
+  ],
+  "logs": []
+}
