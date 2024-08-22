@@ -33,8 +33,8 @@
 
 
         <StackPanel Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center">
-            <TextBlock HorizontalAlignment="Center" FontSize="60" FontFamily="{StaticResource Jersey-Font}">Currecy Converter</TextBlock>
-            <TextBlock HorizontalAlignment="Center" FontSize="20">Referenced by <Hyperlink NavigateUri="https://www.udemy.com/course/complete-csharp-masterclass" RequestNavigate="Hyperlink_RequestNavigate">Udemy Course</Hyperlink></TextBlock>
+            <TextBlock HorizontalAlignment="Center" FontSize="63" FontFamily="{StaticResource Jersey-Font}">Currecy Converter</TextBlock>
+            <TextBlock HorizontalAlignment="Center" FontSize="21">Referenced by <Hyperlink NavigateUri="https://www.udemy.com/course/complete-csharp-masterclass" RequestNavigate="Hyperlink_RequestNavigate">Udemy Course</Hyperlink></TextBlock>
         </StackPanel>
 
         <TextBlock Grid.Row="1" Grid.Column="2" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="20">Powered by <Hyperlink NavigateUri="https://www.exchangerate-api.com/" RequestNavigate="Hyperlink_RequestNavigate">ExchangeRate-API</Hyperlink></TextBlock>
@@ -79,9 +79,9 @@
                     <ColumnDefinition Width="1*"/>
                     <ColumnDefinition Width="20"/>
                 </Grid.ColumnDefinitions>
-                <Label Foreground="{DynamicResource  MaterialDesign.Brush.Background}" FontSize="30" Grid.Row="1" Grid.Column="1">Enter Amount:</Label>
-                <TextBox x:Name="txtUserInput" Height="30" FontSize="20" Background="{DynamicResource MaterialDesign.Brush.Background}" Grid.Row="2" Grid.Column="1" />
-                <ComboBox x:Name="cmbFromUnit" Height="30" FontSize="20" Background="{DynamicResource MaterialDesign.Brush.Background}" Grid.Row="2" Grid.Column="3" ></ComboBox>
+                <Label Foreground="{DynamicResource  MaterialDesign.Brush.Background}" FontSize="35" Grid.Row="1" Grid.Column="1">Enter Amount:</Label>
+                <TextBox x:Name="txtUserInput" Height="30" FontSize="21" Background="{DynamicResource MaterialDesign.Brush.Background}" Grid.Row="2" Grid.Column="1" />
+                <ComboBox x:Name="cmbFromUnit" Height="30" FontSize="21" Background="{DynamicResource MaterialDesign.Brush.Background}" Grid.Row="2" Grid.Column="3" ></ComboBox>
             </Grid>
 
             <materialDesign:PackIcon  Grid.Column="1" Foreground="{DynamicResource MaterialDesign.Brush.Background}"  VerticalAlignment="Center" HorizontalAlignment="Center" Kind="ArrowRightBold" Height="75" Width="75"/>
@@ -102,9 +102,9 @@
                     <ColumnDefinition Width="1*"/>
                     <ColumnDefinition Width="20"/>
                 </Grid.ColumnDefinitions>
-                <Label Foreground="{DynamicResource  MaterialDesign.Brush.Background}" FontSize="30" Grid.Row="1" Grid.Column="1">Result:</Label>
-                <TextBox x:Name="txtResult" Height="30" FontSize="20" Background="{DynamicResource MaterialDesign.Brush.Background}" Grid.Row="2" Grid.Column="1" />
-                <ComboBox x:Name="cmbToUnit" Height="30" FontSize="20" Background="{DynamicResource MaterialDesign.Brush.Background}" Grid.Row="2" Grid.Column="3" ></ComboBox>
+                <Label Foreground="{DynamicResource  MaterialDesign.Brush.Background}" FontSize="35" Grid.Row="1" Grid.Column="1">Result:</Label>
+                <TextBox x:Name="txtResult" Height="30" FontSize="21" Background="{DynamicResource MaterialDesign.Brush.Background}" Grid.Row="2" Grid.Column="1" />
+                <ComboBox x:Name="cmbToUnit" Height="30" FontSize="21" Background="{DynamicResource MaterialDesign.Brush.Background}" Grid.Row="2" Grid.Column="3" ></ComboBox>
             </Grid>
         </Grid>
 

@@ -1,16 +1,10 @@
-﻿using System.Data;
+﻿using SimpleCurrecyApp.Data;
+using System.Configuration;
+using System.Data;
 using System.Diagnostics;
-using System.Text;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
-using System.Windows.Shapes;
-
+using System.IO;
 namespace SimpleCurrecyApp
 {
     /// <summary>
@@ -18,30 +12,56 @@ namespace SimpleCurrecyApp
     /// </summary>
     public partial class MainWindow : Window
     {
-    public static DataTable dtCurrency;
-    public static DataTable dtCurrencyList;
-    public MainWindow()
+        public DataTable dtCurrency;
+        public bool UserSkipped = false;
+
+        public MainWindow()
         {
             InitializeComponent();
-            dtCurrency = Data.CsvReader.LoadCsvToDataTable("Resources/ConcurrencyData.csv");
+            SetComboBoxes(Data.CsvController.LoadCsvToDataTable("Resources/ConcurrencyData.csv"));
 
-            cmbFromUnit.ItemsSource = dtCurrency.DefaultView;
-            cmbFromUnit.DisplayMemberPath = "Name";
-            cmbFromUnit.SelectedValuePath = "Rate";
-            cmbFromUnit.SelectedIndex = 0;
-
-            cmbToUnit.ItemsSource = dtCurrency.DefaultView;
-            cmbToUnit.DisplayMemberPath = "Name";
-            cmbToUnit.SelectedValuePath = "Rate";
-            cmbToUnit.SelectedIndex = 0;
+            this.Loaded += MainWindow_Loaded;
         }
+
+        private async void MainWindow_Loaded(object sender, RoutedEventArgs e)
+        {
+            string apiKey = ApiRequester.GetApiKey();
+            DataTable temp;
+
+
+            if (!UserSkipped && apiKey.Equals(""))
+            {
+                ApiRequest.Show(Data.WarningType.NotValidAPIKey, this);
+                return;
+            }
+
+            if (!File.Exists($"Resources/db_{DateTime.Now.ToString("yyyyMMdd")}.csv") == false)
+            {
+                await ApiRequester.SetApiKey(ApiRequester.GetApiKey());
+                temp = ApiRequester.GetRequestedData();
+
+                if (temp.Rows.Count > 0)
+                {
+                    Data.CsvController.SaveDataTableToCsv(temp, $"Resources/db_{DateTime.Now.ToString("yyyyMMdd")}.csv");
+                } else
+                {
+                    ApiRequest.Show(Data.WarningType.NotValidAPIKey, this);
+                    return;
+                }
+            }
+
+            SetComboBoxes(Data.CsvController.LoadCsvToDataTable($"Resources/db_{DateTime.Now.ToString("yyyyMMdd")}.csv"));
+        }
+
+
+
 
         private void Convert_Click(object sender, RoutedEventArgs e)
         {
             decimal fromval;
             if (!decimal.TryParse(txtUserInput.Text, out fromval))
             {
-                
+
                 WarningWindow.Show(Data.WarningType.NoUserInput, this);
 
             } else if (cmbFromUnit.SelectedValue == null || cmbFromUnit.SelectedValue == "0")
@@ -69,6 +89,19 @@ namespace SimpleCurrecyApp
         {
             Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri) { UseShellExecute = true });
             e.Handled = true;
+        }
+
+        public void SetComboBoxes(DataTable dataTable)
+        {
+            dtCurrency = dataTable;
+            cmbFromUnit.ItemsSource = dtCurrency.DefaultView;
+            cmbFromUnit.DisplayMemberPath = "Name";
+            cmbFromUnit.SelectedValuePath = "Rate";
+            cmbFromUnit.SelectedIndex = 0;
+            cmbToUnit.ItemsSource = dtCurrency.DefaultView;
+            cmbToUnit.DisplayMemberPath = "Name";
+            cmbToUnit.SelectedValuePath = "Rate";
+            cmbToUnit.SelectedIndex = 0;
         }
     }
 }

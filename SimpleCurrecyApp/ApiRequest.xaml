@@ -1,0 +1,68 @@
+﻿<Window x:Class="SimpleCurrecyApp.ApiRequest"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SimpleCurrecyApp"
+        mc:Ignorable="d"
+        Background="{DynamicResource MaterialDesign.Brush.Background}"
+        TextElement.FontWeight="Medium"
+        TextElement.FontSize="21"
+        FontFamily="{StaticResource Jersey-Font}"
+        TextElement.Foreground="{DynamicResource MaterialDesign.Brush.Foreground}"
+        WindowStartupLocation="CenterOwner"
+        Title="API is Required" Height="400" Width="600">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="2*"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="8*"/>
+            <ColumnDefinition Width="*"/>
+        </Grid.ColumnDefinitions>
+
+
+        <TextBlock Grid.Row="1" Grid.Column="1" VerticalAlignment="Bottom">
+            Please input the API key :
+        </TextBlock>
+
+        <TextBlock Grid.Row="4" Grid.Column="1" VerticalAlignment="Top" x:Name="txtWarning" Foreground="Red" TextAlignment="Center">
+         
+        </TextBlock>    
+        
+        
+        
+        <PasswordBox x:Name="pwAPIKey"  Grid.Row="2" Grid.Column="1" Height="30" BorderThickness="2"/>
+        
+        <Button x:Name="btnSubmit" Grid.Column="1" Grid.Row="3" Click="btnSubmit_Click">Submit</Button>
+        
+        <StackPanel Grid.Row="5" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Stretch">
+            <TextBlock > If you don't have an API key,</TextBlock>
+            <TextBlock > You can get it from the following link : <Hyperlink NavigateUri="https://www.exchangerate-api.com/" RequestNavigate="Hyperlink_RequestNavigate">Get API Key</Hyperlink>
+            </TextBlock>
+        </StackPanel>
+
+        
+        <Border Grid.Row="6" Grid.Column="1">
+            <Rectangle  RadiusX="10" RadiusY="10" StrokeThickness="5" Fill="{DynamicResource MaterialDesign.Brush.Primary}"/>
+        </Border>
+        
+        <StackPanel Grid.Row="6" Grid.Column="1" VerticalAlignment="Center" HorizontalAlignment="Center">
+            <TextBlock Foreground="{DynamicResource MaterialDesign.Brush.Background}">You can also skip if you just want to test the application</TextBlock>
+            <TextBlock  Foreground="{DynamicResource MaterialDesign.Brush.Background}">The test Currecy Data is made at 2024-08-22</TextBlock>
+            <TextBlock><Hyperlink Foreground="{DynamicResource MaterialDesign.Brush.Secondary}" NavigateUri="#" RequestNavigate="Hyperlink_skip"
+                                  >I'll skip for now
+            </Hyperlink></TextBlock>
+        </StackPanel>
+    </Grid>
+
+</Window>

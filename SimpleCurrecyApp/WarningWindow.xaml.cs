@@ -2,6 +2,7 @@
 using SimpleCurrecyApp.Data;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -12,6 +13,7 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace SimpleCurrecyApp
@@ -24,7 +26,7 @@ namespace SimpleCurrecyApp
 
         public WarningType? Warn { get; set; }
         public MainWindow? ParentWindow { get; set; }
-        
+
         public WarningWindow()
         {
             InitializeComponent();
@@ -35,7 +37,7 @@ namespace SimpleCurrecyApp
             WarningWindow warningWindow = new WarningWindow()
             {
                 Owner = owner
-        
+
             };
             warningWindow.Warn = type;
             warningWindow.ParentWindow = owner as MainWindow;
@@ -77,6 +79,12 @@ namespace SimpleCurrecyApp
                 ParentWindow?.cmbToUnit.Focus();
             }
         }
+
+        private void Hyperlink_RequestNavigate(object sender, RequestNavigateEventArgs e)
+        {
+            Process.Start(new ProcessStartInfo(e.Uri.AbsoluteUri) { UseShellExecute = true });
+            e.Handled = true;
+        }
     }
-    }
+ }
 
