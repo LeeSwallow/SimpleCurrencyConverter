@@ -8,13 +8,12 @@
         Background="{DynamicResource MaterialDesign.Brush.Background}"
         
         TextElement.FontWeight="Medium"
-        TextElement.FontSize="25"
+        TextElement.FontSize="15"
         FontFamily="{StaticResource Jersey-Font}"
         TextElement.Foreground="{DynamicResource MaterialDesign.Brush.Foreground}"
-
         mc:Ignorable="d"
-        
-        Title="Currecy Converter" Height="800" Width="1200">
+        WindowStartupLocation="CenterScreen"
+        Title="Currecy Converter" Height="800" Width="1200" MinHeight="400" MinWidth="800">
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="10"/>
@@ -35,8 +34,12 @@
 
         <StackPanel Grid.Row="1" Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center">
             <TextBlock HorizontalAlignment="Center" FontSize="60" FontFamily="{StaticResource Jersey-Font}">Currecy Converter</TextBlock>
-            <TextBlock HorizontalAlignment="Center" FontSize="20">Converted Currency</TextBlock>
+            <TextBlock HorizontalAlignment="Center" FontSize="20">Referenced by <Hyperlink NavigateUri="https://www.udemy.com/course/complete-csharp-masterclass" RequestNavigate="Hyperlink_RequestNavigate">Udemy Course</Hyperlink></TextBlock>
         </StackPanel>
+
+        <TextBlock Grid.Row="1" Grid.Column="2" VerticalAlignment="Bottom" HorizontalAlignment="Center" FontSize="20">Powered by <Hyperlink NavigateUri="https://www.exchangerate-api.com/" RequestNavigate="Hyperlink_RequestNavigate">ExchangeRate-API</Hyperlink></TextBlock>
+
+
 
         <Border Grid.Row="2" Grid.Column="2">
             <Rectangle  RadiusX="10" RadiusY="10" StrokeThickness="5">
@@ -58,26 +61,51 @@
             </Grid.ColumnDefinitions>
 
 
-            <StackPanel Grid.Column="0" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <Label Foreground="{DynamicResource  MaterialDesign.Brush.Background}" FontSize="30">Enter Amount:</Label>
 
-                <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                    <TextBox x:Name="txtUserInput" Width="300" Margin="0 0 10 0" Background="{DynamicResource MaterialDesign.Brush.Background}"/>
-                    <ComboBox Width="100" Background="{DynamicResource MaterialDesign.Brush.Background}"></ComboBox>
-                </StackPanel>
-            </StackPanel>
+
+            <Grid Grid.Column="0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                
+                
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="20"/>
+                </Grid.ColumnDefinitions>
+                <Label Foreground="{DynamicResource  MaterialDesign.Brush.Background}" FontSize="30" Grid.Row="1" Grid.Column="1">Enter Amount:</Label>
+                <TextBox x:Name="txtUserInput" Height="30" FontSize="20" Background="{DynamicResource MaterialDesign.Brush.Background}" Grid.Row="2" Grid.Column="1" />
+                <ComboBox x:Name="cmbFromUnit" Height="30" FontSize="20" Background="{DynamicResource MaterialDesign.Brush.Background}" Grid.Row="2" Grid.Column="3" ></ComboBox>
+            </Grid>
 
             <materialDesign:PackIcon  Grid.Column="1" Foreground="{DynamicResource MaterialDesign.Brush.Background}"  VerticalAlignment="Center" HorizontalAlignment="Center" Kind="ArrowRightBold" Height="75" Width="75"/>
 
 
-            <StackPanel Grid.Column="2" VerticalAlignment="Center" HorizontalAlignment="Center">
-                <Label Foreground="{DynamicResource  MaterialDesign.Brush.Background}" FontSize="30">Result Currency:</Label>
+            <Grid Grid.Column="2">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="50"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
 
-                <StackPanel VerticalAlignment="Center" Orientation="Horizontal">
-                    <TextBlock x:Name="txtResult" Width="300" Margin="0 0 10 0" Padding="5"  Background="{DynamicResource MaterialDesign.Brush.Background}"/>
-                    <ComboBox Width="100" Background="{DynamicResource MaterialDesign.Brush.Background}"></ComboBox>
-                </StackPanel>
-            </StackPanel>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="20"/>
+                    <ColumnDefinition Width="3*"/>
+                    <ColumnDefinition Width="10"/>
+                    <ColumnDefinition Width="1*"/>
+                    <ColumnDefinition Width="20"/>
+                </Grid.ColumnDefinitions>
+                <Label Foreground="{DynamicResource  MaterialDesign.Brush.Background}" FontSize="30" Grid.Row="1" Grid.Column="1">Result:</Label>
+                <TextBox x:Name="txtResult" Height="30" FontSize="20" Background="{DynamicResource MaterialDesign.Brush.Background}" Grid.Row="2" Grid.Column="1" />
+                <ComboBox x:Name="cmbToUnit" Height="30" FontSize="20" Background="{DynamicResource MaterialDesign.Brush.Background}" Grid.Row="2" Grid.Column="3" ></ComboBox>
+            </Grid>
         </Grid>
 
         <Grid Grid.Row="3" Grid.Column="2">

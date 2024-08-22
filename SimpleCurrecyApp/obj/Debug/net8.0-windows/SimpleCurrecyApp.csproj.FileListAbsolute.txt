@@ -25,3 +25,7 @@ D:\SimpleProject\SimpleCurrecyApp\SimpleCurrecyApp\obj\Debug\net8.0-windows\ref\
 D:\SimpleProject\SimpleCurrecyApp\SimpleCurrecyApp\bin\Debug\net8.0-windows\MaterialDesignColors.dll
 D:\SimpleProject\SimpleCurrecyApp\SimpleCurrecyApp\bin\Debug\net8.0-windows\MaterialDesignThemes.Wpf.dll
 D:\SimpleProject\SimpleCurrecyApp\SimpleCurrecyApp\bin\Debug\net8.0-windows\Microsoft.Xaml.Behaviors.dll
+D:\SimpleProject\SimpleCurrecyApp\SimpleCurrecyApp\bin\Debug\net8.0-windows\Resources\ConcurrencyData.csv
+D:\SimpleProject\SimpleCurrecyApp\SimpleCurrecyApp\obj\Debug\net8.0-windows\SimpleCurrecyApp_Content.g.cs
+D:\SimpleProject\SimpleCurrecyApp\SimpleCurrecyApp\obj\Debug\net8.0-windows\WarningWindow.g.cs
+D:\SimpleProject\SimpleCurrecyApp\SimpleCurrecyApp\obj\Debug\net8.0-windows\WarningWindow.baml
