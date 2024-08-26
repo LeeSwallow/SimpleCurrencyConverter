@@ -73,8 +73,8 @@ namespace SimpleCurrecyApp.Data
 
         public static DataTable GetRequestedData()
         {
-
-            if (_dataTable.Rows.Count > 0 && (DateTime.Parse(_dataTable.Rows[0]["Date"], ) ))
+            // 날짜가 하루 정도 차이 날때 새로 갱신 안함
+            if (_dataTable.Rows.Count > 0 && (DateTime.ParseExact((string)_dataTable.Rows[0]["Date"], "yyyyMMdd", null) > DateTime.Now.Date.AddDays(-1)))
             {
                 return _dataTable;
             }

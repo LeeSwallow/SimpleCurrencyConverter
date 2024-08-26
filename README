@@ -1,0 +1,19 @@
+# Simple Currency App
+
+This is a simple currency exchange app that allows users to convert currencies using the exchangerate API.
+
+## Features
+
+- Currency conversion based on real-time exchange rates
+- User-friendly interface
+- Easy-to-use API integration
+
+## Usage
+
+1. Enter the amount and select the source currency.
+2. Choose the target currency.
+3. Click on the "Convert" button to get the converted amount.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).

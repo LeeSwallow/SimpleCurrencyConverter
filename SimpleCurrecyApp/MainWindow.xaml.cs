@@ -64,10 +64,10 @@ namespace SimpleCurrecyApp
 
                 WarningWindow.Show(Data.WarningType.NoUserInput, this);
 
-            } else if (cmbFromUnit.SelectedValue == null || cmbFromUnit.SelectedValue == "0")
+            } else if (cmbFromUnit.SelectedValue == null || cmbFromUnit.SelectedIndex == 0)
             {
                 WarningWindow.Show(Data.WarningType.NoFromCurrency, this);
-            } else if (cmbToUnit.SelectedValue == null || cmbToUnit.SelectedValue == "0")
+            } else if (cmbToUnit.SelectedValue == null || cmbToUnit.SelectedIndex == 0)
             {
                 WarningWindow.Show(Data.WarningType.NoToCurrency, this);
             } else

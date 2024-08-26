@@ -33,3 +33,4 @@ D:\SimpleProject\SimpleCurrecyApp\SimpleCurrecyApp\obj\Debug\net8.0-windows\refi
 D:\SimpleProject\SimpleCurrecyApp\SimpleCurrecyApp\obj\Debug\net8.0-windows\SimpleCurrecyApp.pdb
 D:\SimpleProject\SimpleCurrecyApp\SimpleCurrecyApp\obj\Debug\net8.0-windows\SimpleCurrecyApp.genruntimeconfig.cache
 D:\SimpleProject\SimpleCurrecyApp\SimpleCurrecyApp\obj\Debug\net8.0-windows\ref\SimpleCurrecyApp.dll
+D:\SimpleProject\SimpleCurrecyApp\SimpleCurrecyApp\obj\Debug\net8.0-windows\SimpleCurrecyApp.sourcelink.json
